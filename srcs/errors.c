@@ -1,6 +1,7 @@
 #include "fdf.h"
 
 static void	clear_fdf(t_fdf *fdf);
+//static void clear_map(t_fdf *fdf);
 
 int	close_fdf(t_fdf *fdf, int error_code)
 {
@@ -24,7 +25,15 @@ static void	clear_fdf(t_fdf *fdf)
 			mlx_destroy_window(fdf->mlx, fdf->win);
 		if (fdf->mlx)
 			free(fdf->mlx);
-		ft_lstclear(&fdf->map, del);
+//		if (fdf->map)
+//			clear_map(fdf);
+//		ft_lstclear(&fdf->map, del);
 		free(fdf);
 	}
 }
+/*
+static void clear_map(t_fdf *fdf)
+{
+
+}
+*/

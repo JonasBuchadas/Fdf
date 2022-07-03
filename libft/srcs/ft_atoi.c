@@ -21,7 +21,6 @@ to int representation
 static int	readnumbers(const char *str, int i, int signal);
 static int	check_overflow(const char *str, int i, int signal);
 static int	check_signal(char c);
-static int	ft_isspace(int c);
 
 int	ft_atoi(const char *str)
 {
@@ -92,22 +91,4 @@ static int	check_overflow(const char *str, int i, int signal)
 	else if (len == 10 && signal < 0 && ft_strncmp(&str[i], min, 10) > 0)
 		return (1);
 	return (0);
-}
-
-static int	ft_isspace(int c)
-{
-	if (c == '\t')
-		return (1);
-	if (c == '\n')
-		return (1);
-	if (c == '\v')
-		return (1);
-	if (c == '\f')
-		return (1);
-	if (c == '\r')
-		return (1);
-	if (c == ' ')
-		return (1);
-	else
-		return (0);
 }

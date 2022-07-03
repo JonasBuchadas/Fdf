@@ -19,14 +19,6 @@
 # define FD 3
 # define MAP 4
 
-typedef struct	s_fdf {
-    void	*mlx;
-    void	*win;
-    int     fd;
-    char    *filename;
-	t_list	*map;
-}				t_fdf;
-
 typedef struct s_coord
 {
 	int		x;
@@ -44,6 +36,16 @@ typedef struct	s_data {
 	int		line_length;
 	int		endian;
 }				t_data;
+
+typedef struct	s_fdf {
+    void	*mlx;
+    void	*win;
+    int     fd;
+	int		map_x;
+	int		map_y;
+    char    *filename;
+	t_coord	***map;
+}				t_fdf;
 
 int 	open_file(char *filename, t_fdf *fdf);
 int		close_window(t_fdf *fdf);

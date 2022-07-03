@@ -89,6 +89,7 @@ void	ft_cdlstdelone(t_dlist *lst, void (*del)(void *));
 void	ft_cdlstclear(t_dlist **lst, void (*del)(void *));
 void	ft_cdlstiter(t_dlist *lst, void (*f)(void *));
 // ADDITIONAL PROTOTYPES
+int		ft_isspace(int c);
 char	*get_next_line(int fd);
 void	ft_sort_int_tab(int *tab, int size);
 int		ft_min_int(int n, ...);
@@ -98,4 +99,5 @@ void	ft_strarray_clear(char ***str_array);
 void	ft_strdel(char **str);
 void	ft_memdel(void **mem);
 int		ft_strarray_size(char **strarr);
+int		ft_atoi_base(const char *str, int base);
 #endif

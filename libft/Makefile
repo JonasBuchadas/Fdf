@@ -12,6 +12,7 @@ OBJS_PATH=	objs/
 
 ### SOURCE FILES ###
 SRC=	ft_atoi.c \
+		ft_atoi_base.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -48,6 +49,7 @@ SRC=	ft_atoi.c \
 		ft_sort_int_tab.c \
 		ft_min_int.c \
 		ft_max_int.c \
+		ft_isspace.c \
 		ft_get_next_line.c \
 		ft_strequal.c \
 		ft_strarray_clear.c \
