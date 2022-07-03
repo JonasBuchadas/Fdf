@@ -37,9 +37,9 @@ static void clear_map(t_fdf *fdf)
 	int y;
 
 	y = -1;
-	x = -1;
 	while (++y < fdf->map_y)
 	{
+		x = -1;
 		while (++x < fdf->map_x)
 		{
 			ft_memdel((void **)&fdf->map[y][x]);
