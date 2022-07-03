@@ -1,7 +1,7 @@
 #include "fdf.h"
 
 static void	clear_fdf(t_fdf *fdf);
-//static void clear_map(t_fdf *fdf);
+static void clear_map(t_fdf *fdf);
 
 int	close_fdf(t_fdf *fdf, int error_code)
 {
@@ -25,15 +25,25 @@ static void	clear_fdf(t_fdf *fdf)
 			mlx_destroy_window(fdf->mlx, fdf->win);
 		if (fdf->mlx)
 			free(fdf->mlx);
-//		if (fdf->map)
-//			clear_map(fdf);
-//		ft_lstclear(&fdf->map, del);
+		if (fdf->map)
+			clear_map(fdf);
 		free(fdf);
 	}
 }
-/*
+
 static void clear_map(t_fdf *fdf)
 {
+	int	x;
+	int y;
 
+	y = -1;
+	x = -1;
+	while (++y < fdf->map_y)
+	{
+		while (++x < fdf->map_x)
+		{
+			ft_memdel((void **)&fdf->map[y][x]);
+		}
+	}
+	free(fdf->map);
 }
-*/
