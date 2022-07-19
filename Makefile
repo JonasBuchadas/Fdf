@@ -22,11 +22,14 @@ endif
 ### SOURCE FILES ###
 SRC_NAME=	$(NAME).c
 SRC_BONUS=	$(NAME)_bonus.c
-SRC_TESTS=	test.c
+SRC_TESTS=	test1.c
 SRCS=		utils.c \
 			hooks.c \
 			errors.c \
-			read_map.c
+			read_map.c \
+			draw_img.c \
+			draw_map.c \
+			menu.c
 SRCS_NAME=	$(addprefix $(SRCS_PATH), $(SRC_NAME) $(SRCS))
 SRCS_BONUS=	$(addprefix $(SRCS_PATH), $(SRC_BONUS) $(SRCS))
 SRCS_TESTS=	$(addprefix $(SRCS_PATH), $(SRC_TESTS) $(SRCS))

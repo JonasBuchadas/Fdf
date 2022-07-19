@@ -2,6 +2,7 @@
 
 static void	init_fdf(t_fdf *fdf, char *filename);
 static void init_map(t_fdf *fdf, char *filename);
+static void init_img(t_fdf *fdf);
 static void	loop_fdf(t_fdf *fdf);
 
 int	main(int argc, char **argv)
@@ -15,6 +16,10 @@ int	main(int argc, char **argv)
 	if (!fdf)
 		return (close_fdf(fdf, MALLOC));
 	init_fdf(fdf, argv[1]);
+	init_map(fdf, fdf->filename);
+	read_map(fdf);
+	init_img(fdf);
+	draw_img(fdf);
 	loop_fdf(fdf);
 	return (close_fdf(fdf, SUCCESS));
 }
@@ -28,9 +33,7 @@ static void	init_fdf(t_fdf *fdf, char *filename)
 	if (fdf->fd < 0)
 		exit (close_fdf(fdf, FD));
 	fdf->filename = filename;
-	init_map(fdf, filename);
-	read_map(fdf);
-	fdf->win = mlx_new_window(fdf->mlx, W_WIDTH, W_HEIGHT, "FDF");
+	fdf->win = mlx_new_window(fdf->mlx, W_WIDTH, W_HEIGHT, filename);
 }
 
 static void init_map(t_fdf *fdf, char *filename)
@@ -58,6 +61,27 @@ static void init_map(t_fdf *fdf, char *filename)
     fdf->map = (t_coord ***)ft_calloc(fdf->map_y, sizeof(t_coord **));
     if (!fdf->map)
         exit(close_fdf(fdf, MALLOC));
+}
+
+static void init_img(t_fdf *fdf)
+{
+	t_data  *img;    
+
+    img = (t_data *)calloc(1, sizeof(t_data));
+    if (!img)
+        exit (close_fdf(fdf, MALLOC));
+    fdf->img = img;
+    img->img = mlx_new_image(fdf->mlx, W_HEIGHT, W_WIDTH);
+
+    img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel, &img->line_length,
+								&img->endian);
+	if (!img->img || !img->addr)
+		exit(close_fdf(fdf, IMAGE));
+	get_zrange(fdf);
+	center_map(fdf);
+	img->palette = 1;
+	img->projection = 1;
+	img->z_zoom = 1;
 }
 
 static void	loop_fdf(t_fdf *fdf)

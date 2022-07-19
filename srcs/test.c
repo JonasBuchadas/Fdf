@@ -9,14 +9,6 @@ int minimize()
     return (0);
 }
 
-int	key_pressed(int keycode, t_fdf *vars)
-{
-	printf("Keycode of ESC: %i\n", keycode);
-	if (keycode == ESC_KEY)
-		exit_win(vars);
-	return (0);
-}
-
 int	exit_win(t_fdf *vars)
 {
 	if (vars)
@@ -64,14 +56,6 @@ int oposite_color(int color)
 	g = (g * -1) + 255;
 	b = (b * -1) + 255;
 	return (create_trgb(t, (unsigned char)r, (unsigned char)g, (unsigned char)b));
-}
-
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
-{
-	char	*dst;
-
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
 }
 
 int	main(void)

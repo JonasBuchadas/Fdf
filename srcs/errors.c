@@ -1,7 +1,7 @@
 #include "fdf.h"
 
 static void	clear_fdf(t_fdf *fdf);
-static void clear_map(t_fdf *fdf);
+static void	clear_map(t_fdf *fdf);
 
 int	close_fdf(t_fdf *fdf, int error_code)
 {
@@ -13,6 +13,8 @@ int	close_fdf(t_fdf *fdf, int error_code)
 		ft_putendl_fd("FILE NOT FOUND", STDERR_FILENO);
 	else if (error_code == MAP)
 		ft_putendl_fd("INCORRECT VALUE IN MAP", STDERR_FILENO);
+	else if (error_code == IMAGE)
+		ft_putendl_fd("FAILURE TO INITIALIZE IMAGE", STDERR_FILENO);
 	clear_fdf(fdf);
 	return (error_code);
 }
@@ -27,14 +29,16 @@ static void	clear_fdf(t_fdf *fdf)
 			free(fdf->mlx);
 		if (fdf->map)
 			clear_map(fdf);
+		if (fdf->img)
+			free(fdf->img);
 		free(fdf);
 	}
 }
 
-static void clear_map(t_fdf *fdf)
+static void	clear_map(t_fdf *fdf)
 {
 	int	x;
-	int y;
+	int	y;
 
 	y = -1;
 	while (++y < fdf->map_y)
