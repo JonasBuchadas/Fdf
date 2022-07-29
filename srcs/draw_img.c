@@ -1,12 +1,12 @@
 #include "fdf.h"
 
 void	draw_menu(t_fdf *fdf);
-void	draw_menu_background(t_data *img);
+void	draw_menu_background(t_image *img);
 
 void	draw_img(t_fdf *fdf)
 {
 	draw_menu_background(fdf->img);
-	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img->img, 0, 0);
+	draw_map(fdf);
 	draw_menu(fdf);
 }
 
@@ -36,7 +36,7 @@ void center_map(t_fdf *fdf)
 
 void get_zrange(t_fdf *fdf)
 {
-    t_data  *img;
+    t_image  *img;
     int     x;
     int     y;
 
@@ -77,11 +77,10 @@ void	draw_menu(t_fdf *fdf)
 	mlx_string_put(mlx, win, 57, y += 25, TEXT_COLOR, "X-Axis - Key 4 or 6");
 	mlx_string_put(mlx, win, 57, y += 25, TEXT_COLOR, "Y-Axis - Key 2 or 8");
 	mlx_string_put(mlx, win, 57, y += 25, TEXT_COLOR, "Z-Axis - Key 1 or 9");
-//	projection_menu_selector(fdf, mlx, win, y);
 	mlx_string_put(mlx, win, 15, y += 200, TEXT_COLOR, "Rotate Video: V");
 }
 
-void	draw_menu_background(t_data *img)
+void	draw_menu_background(t_image *img)
 {
 	size_t	offset;
 	char	*pixel;

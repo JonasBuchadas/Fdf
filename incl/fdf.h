@@ -4,6 +4,7 @@
 # include "keys.h"
 # include "libft.h"
 # include "mlx.h"
+# include <math.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <string.h>
@@ -41,7 +42,7 @@ typedef struct s_coord
 	int		color;
 }	t_coord;
 
-typedef struct	s_data {
+typedef struct	s_image {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -51,12 +52,14 @@ typedef struct	s_data {
 	int		min_z;
 	int		map_start_x;
 	int		map_start_y;
+	int		shift_x;
+	int		shift_y;
 	int		palette;
 	int		projection;
 	int		zoom;
 	double	z_zoom;
-
-}				t_data;
+	double	angle;
+}				t_image;
 
 typedef struct s_mouse
 {
@@ -74,11 +77,11 @@ typedef struct	s_fdf {
 	int		map_y;
     char    *filename;
 	t_coord	***map;
-	t_data	*img;
+	t_image	*img;
 }				t_fdf;
 
 int 	open_file(char *filename, t_fdf *fdf);
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	my_mlx_pixel_put(t_image *img, int x, int y, int color);
 int		close_window(t_fdf *fdf);
 int 	close_fdf(t_fdf *fdf, int error_code);
 int		key_pressed(int key, t_fdf *fdf);
@@ -87,6 +90,8 @@ void    read_map(t_fdf *fdf);
 void 	draw_img(t_fdf *fdf);
 void 	draw_map(t_fdf *fdf);
 void    del(void *str);
+float	float_module(float x);
+float	max_float(float a, float b);
 void    get_zrange(t_fdf *fdf);
 void    center_map(t_fdf *fdf);
 

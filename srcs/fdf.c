@@ -65,9 +65,9 @@ static void init_map(t_fdf *fdf, char *filename)
 
 static void init_img(t_fdf *fdf)
 {
-	t_data  *img;    
+	t_image  *img;    
 
-    img = (t_data *)calloc(1, sizeof(t_data));
+    img = (t_image *)calloc(1, sizeof(t_image));
     if (!img)
         exit (close_fdf(fdf, MALLOC));
     fdf->img = img;
@@ -80,8 +80,11 @@ static void init_img(t_fdf *fdf)
 	get_zrange(fdf);
 	center_map(fdf);
 	img->palette = 1;
+	img->angle = 0.523599;
 	img->projection = 1;
 	img->z_zoom = 1;
+	img->shift_x = W_WIDTH / 3;
+	img->shift_y = W_HEIGHT / 3;
 }
 
 static void	loop_fdf(t_fdf *fdf)

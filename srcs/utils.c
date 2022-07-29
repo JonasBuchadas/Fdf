@@ -19,10 +19,26 @@ int	open_file(char *filename, t_fdf *fdf)
 	return (fd);
 }
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_image *img, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
+}
+
+float	float_module(float x)
+{
+	if (x < 0)
+		return (-x);
+	else
+		return (x);
+}
+
+float	max_float(float a, float b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }
