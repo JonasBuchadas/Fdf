@@ -1,0 +1,17 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/sgoinfre/jocaetan/Fdf'
+mkdir -p objs/
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/fdf.c -o objs/fdf.o
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/utils.c -o objs/utils.o
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/hooks.c -o objs/hooks.o
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/errors.c -o objs/errors.o
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/read_map.c -o objs/read_map.o
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/draw_img.c -o objs/draw_img.o
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/draw_map.c -o objs/draw_map.o
+gcc -Wall -Werror -Wextra -g -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -c srcs/menu.c -o objs/menu.o
+make bonus --silent -C ./libft/
+make --silent -C ./mlx_linux/
+gcc -Wall -Werror -Wextra -g objs/fdf.o objs/utils.o objs/hooks.o objs/errors.o objs/read_map.o objs/draw_img.o objs/draw_map.o objs/menu.o -I ./libft/incl/ -I incl/ -I ./mlx_linux/ -L./libft/ -lft -L./mlx_linux/ -lmlx_Linux -lX11 -lXext -lm -lz -O3 -o fdf
+echo -e "\033[1;32mfdf Program created\033[0m"
+make: Leaving directory '/sgoinfre/jocaetan/Fdf'
+ 

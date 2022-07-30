@@ -1,0 +1,618 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-unknown-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Jul 30 15:06:14 2022
+
+# Variables
+
+# makefile (from 'Makefile', line 33)
+SRCS_NAME = $(addprefix $(SRCS_PATH), $(SRC_NAME) $(SRCS))
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 40)
+OBJ_TESTS = $(SRC_TESTS:.c=.o)
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+GNOME_KEYRING_CONTROL = /nfs/homes/jocaetan/.cache/keyring-K9M6P1
+# makefile (from 'Makefile', line 47)
+LIBFTMAKE = make bonus --silent -C $(LIBFT_PATH)
+# environment
+SBX_CHROME_API_RQ = 1
+# environment
+VSCODE_CWD = /nfs/homes/jocaetan
+# makefile (from 'Makefile', line 12)
+LIBFT_PATH = ./libft/
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
+# environment
+GDM_LANG = en
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /sgoinfre/jocaetan/Fdf
+# environment
+ZYPAK_ZYGOTE_STRATEGY_SPAWN = 1
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+GI_TYPELIB_PATH = /app/lib/girepository-1.0
+# makefile (from 'Makefile', line 64)
+DEFAULT = \033[0m
+# environment
+XDG_DATA_DIRS = /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /nfs/homes/jocaetan/.var/app/com.visualstudio.code/config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session13
+# makefile (from 'Makefile', line 48)
+LIBFT = -L$(LIBFT_PATH) -lft
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/flatpak/Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/include
+# environment
+ALSA_CONFIG_DIR = /usr/share/alsa
+# makefile
+MAKEFLAGS = pqrR
+# environment
+ZYPAK_SPAWN_LATEST_ON_REEXEC = 0
+# makefile
+CURDIR := /sgoinfre/jocaetan/Fdf
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from 'Makefile', line 26)
+SRCS = utils.c hooks.c errors.c read_map.c draw_img.c draw_map.c menu.c
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+ZYPAK_LIB = /app/bin/../lib
+# environment
+ 
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/flatpak/ssh-auth
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_CONFIG_DIRS = /app/etc/xdg:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+ALSA_CONFIG_PATH = /usr/share/alsa/alsa-flatpak.conf
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# makefile (from 'Makefile', line 25)
+SRC_TESTS = test1.c
+# environment
+FLATPAK_SANDBOX_DIR = /nfs/homes/jocaetan/.var/app/com.visualstudio.code/sandbox
+# automatic
+@F = $(notdir $@)
+# makefile (from 'Makefile', line 23)
+SRC_NAME = $(NAME).c
+# environment
+VSCODE_PID = 23
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_10476_y5eQSH
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+AT_SPI_BUS_ADDRESS = unix:path=/run/flatpak/at-spi-bus
+# environment
+XDG_DATA_HOME = /nfs/homes/jocaetan/.var/app/com.visualstudio.code/data
+# environment
+SANDBOX_LD_PRELOAD = /app/bin/../lib/libzypak-preload-host.so:/app/bin/../lib/libzypak-preload-host-spawn-strategy.so
+# environment
+SESSION_MANAGER = local/c2r9s1.42lisboa.com:@/tmp/.ICE-unix/261593,unix/c2r9s1.42lisboa.com:/tmp/.ICE-unix/261593
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/flatpak/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from 'Makefile', line 14)
+SRCS_PATH = srcs/
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+__EGL_EXTERNAL_PLATFORM_CONFIG_DIRS = /etc/egl/egl_external_platform.d:/usr/lib/x86_64-linux-gnu/GL/egl/egl_external_platform.d:/usr/share/egl/egl_external_platform.d
+# default
+MAKE_HOST := x86_64-unknown-linux-gnu
+# makefile (from 'Makefile', line 41)
+OBJS = $(SRCS:.c=.o)
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+LD_LIBRARY_PATH = /app/lib
+# makefile (from 'Makefile', line 24)
+SRC_BONUS = $(NAME)_bonus.c
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SANDBOX_LD_LIBRARY_PATH = /app/lib
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /app/bin:/app/bin:/app/bin:/usr/bin:/nfs/homes/jocaetan/.var/app/com.visualstudio.code/data/node_modules/bin
+# default
+MAKEFILES := 
+# environment
+LANGUAGE = en
+# automatic
+^F = $(notdir $^)
+# environment
+DBUS_SYSTEM_BUS_ADDRESS = unix:path=/run/dbus/system_bus_socket
+# makefile (from 'Makefile', line 34)
+SRCS_BONUS = $(addprefix $(SRCS_PATH), $(SRC_BONUS) $(SRCS))
+# makefile (from 'Makefile', line 39)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+# makefile (from 'Makefile', line 13)
+INCL_PATH = incl/
+# environment
+XDG_CONFIG_HOME = /nfs/homes/jocaetan/.var/app/com.visualstudio.code/config
+# makefile (from 'Makefile', line 15)
+OBJS_PATH = objs/
+# makefile (from 'Makefile', line 62)
+GREEN = \033[1;32m
+# makefile (from 'Makefile', line 53)
+MLX = -L$(MLX_PATH) -lmlx_Linux -lX11 -lXext -lm -lz -O3
+# environment
+DOCKER_HOST = unix:///run/user/10476/docker.sock
+# automatic
+?F = $(notdir $?)
+# makefile (from 'Makefile', line 59)
+INC = -I $(LIBFT_PATH)$(INCL_PATH) -I $(INCL_PATH) -I $(MLX_PATH)
+# makefile (from 'Makefile', line 5)
+NAME = fdf
+# makefile (from 'Makefile', line 17)
+MLX_PATH = ./mlx_linux/
+# makefile (from 'Makefile', line 38)
+OBJ_NAME = $(SRC_NAME:.c=.o)
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+GST_PLUGIN_SYSTEM_PATH = /app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 2)
+OS = $(shell uname -s)
+# environment
+LOGNAME = jocaetan
+# environment
+container = flatpak
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/flatpak/exports/share/applications/com.visualstudio.code.desktop
+# makefile (from 'Makefile', line 44)
+OBJS_TESTS = $(addprefix $(OBJS_PATH), $(OBJ_TESTS) $(OBJS))
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 51)
+MLXMAKE = make --silent -C $(MLX_PATH)
+# makefile (from 'Makefile', line 63)
+RED = \033[1;31m
+# environment
+NPM_CONFIG_GLOBALCONFIG = /app/etc/npmrc
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+USER = jocaetan
+# environment
+DISPLAY = :99.0
+# default
+MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 270119
+# environment
+SSH_AGENT_PID = 261692
+# environment
+_ = /usr/bin/make
+# environment
+XDG_RUNTIME_DIR = /run/user/10476
+# makefile (from 'Makefile', line 9)
+CFLAGS = -Wall -Werror -Wextra -g
+# makefile (from 'Makefile', line 35)
+SRCS_TESTS = $(addprefix $(SRCS_PATH), $(SRC_TESTS) $(SRCS))
+# environment
+GPG_AGENT_INFO = /run/user/10476/gnupg/S.gpg-agent:0:1
+# makefile (from 'Makefile', line 42)
+OBJS_NAME = $(addprefix $(OBJS_PATH), $(OBJ_NAME) $(OBJS))
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /nfs/homes/jocaetan
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/10476/vscode-0f7cf0ef-1.69.2-main.sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+XDG_CACHE_HOME = /nfs/homes/jocaetan/.var/app/com.visualstudio.code/cache
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/jocaetan
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 8)
+CC = gcc
+# makefile (from 'Makefile', line 43)
+OBJS_BONUS = $(addprefix $(OBJS_PATH), $(OBJ_BONUS) $(OBJS))
+# environment
+FLATPAK_ID = com.visualstudio.code
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+ZYPAK_BIN = /app/bin
+# environment
+GDMSESSION = ubuntu
+# variable set hash-table stats:
+# Load=146/1024=14%, Rehash=0, Collisions=29/240=12%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 59, inode 23330910): 13 files, no impossibilities.
+# srcs (device 59, inode 23331054): 11 files, no impossibilities so far.
+
+# 24 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+objs/%.o: srcs/%.c
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+# Files
+
+objs/draw_img.o: srcs/draw_img.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'draw_img'
+#  Last modified 2022-07-30 13:22:47.859035697
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+# Not a target:
+srcs/menu.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.862188477
+#  File has been updated.
+#  Successfully updated.
+
+objs/read_map.o: srcs/read_map.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'read_map'
+#  Last modified 2022-07-30 13:22:47.824034775
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+objs/hooks.o: srcs/hooks.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'hooks'
+#  Last modified 2022-07-30 13:22:47.757033009
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+objs/draw_map.o: srcs/draw_map.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'draw_map'
+#  Last modified 2022-07-30 13:22:47.893036593
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+objs/:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-30 13:22:47.923037384
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 92):
+	@mkdir -p $@
+	
+
+# Not a target:
+objs/test1.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/draw_map.c:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-07-30 13:11:30.858188372
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.729184974
+#  File has been updated.
+#  Successfully updated.
+
+bonus: objs/ objs/fdf_bonus.o objs/utils.o objs/hooks.o objs/errors.o objs/read_map.o objs/draw_img.o objs/draw_map.o objs/menu.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 80):
+	@$(LIBFTMAKE)
+	@$(MLXMAKE)
+	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(INC) $(LIBFT) $(MLX) -o $(NAME)
+	@echo -e "$(GREEN)$(NAME) Program created$(DEFAULT)"
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 95):
+	@make $@ --silent -C $(LIBFT_PATH)
+	@rm -rf $(OBJS_PATH)
+	@echo -e "$(RED)Object files removed$(DEFAULT)"
+
+objs/fdf.o: srcs/fdf.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'fdf'
+#  Last modified 2022-07-30 13:22:47.694031349
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+# Not a target:
+srcs/utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.865188556
+#  File has been updated.
+#  Successfully updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+objs/menu.o: srcs/menu.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'menu'
+#  Last modified 2022-07-30 13:22:47.92403741
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+# Not a target:
+srcs/errors.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.859188398
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+objs/fdf_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fdf: objs/ objs/fdf.o objs/utils.o objs/hooks.o objs/errors.o objs/read_map.o objs/draw_img.o objs/draw_map.o objs/menu.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := fdf
+# automatic
+# * := 
+# automatic
+# < := objs/
+# automatic
+# + := objs/ objs/fdf.o objs/utils.o objs/hooks.o objs/errors.o objs/read_map.o objs/draw_img.o objs/draw_map.o objs/menu.o
+# automatic
+# % := 
+# automatic
+# ^ := objs/ objs/fdf.o objs/utils.o objs/hooks.o objs/errors.o objs/read_map.o objs/draw_img.o objs/draw_map.o objs/menu.o
+# automatic
+# ? := objs/ objs/fdf.o objs/utils.o objs/hooks.o objs/errors.o objs/read_map.o objs/draw_img.o objs/draw_map.o objs/menu.o
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=15/37=41%
+#  recipe to execute (from 'Makefile', line 74):
+	@$(LIBFTMAKE)
+	@$(MLXMAKE)
+	@$(CC) $(CFLAGS) $(OBJS_NAME) $(INC) $(LIBFT) $(MLX) -o $(NAME)
+	@echo -e "$(GREEN)$(NAME) Program created$(DEFAULT)"
+
+# Not a target:
+srcs/hooks.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.861188451
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: fdf
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/29=0%
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 100):
+	@make $@ --silent -C $(LIBFT_PATH)
+	@echo -e "$(RED)Libft removed$(DEFAULT)"
+	@rm -f $(NAME)
+	@echo -e "$(RED)$(NAME) Program removed$(DEFAULT)"
+
+# Not a target:
+srcs/read_map.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.863188504
+#  File has been updated.
+#  Successfully updated.
+
+test: objs/ objs/test1.o objs/utils.o objs/hooks.o objs/errors.o objs/read_map.o objs/draw_img.o objs/draw_map.o objs/menu.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 86):
+	@$(LIBFTMAKE)
+	@$(MLXMAKE)
+	@$(CC) $(CFLAGS) $(OBJS_TESTS) $(INC) $(LIBFT) $(MLX) -o $(NAME)
+	@echo -e "$(GREEN)$(NAME) Program created$(DEFAULT)"
+
+# Not a target:
+srcs/draw_img.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.857188346
+#  File has been updated.
+#  Successfully updated.
+
+norm:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 109):
+	@norminette -R CheckForbiddenSourceHeader $(SRCS_PATH)
+	@norminette -R CheckForbiddenSourceHeader $(INCL_PATH)
+	@norminette -R CheckDefine $(SRCS_PATH)
+	@norminette -R CheckDefine $(INCL_PATH)
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all bonus clean fclean re norm
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/fdf.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 13:11:30.860188425
+#  File has been updated.
+#  Successfully updated.
+
+objs/utils.o: srcs/utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils'
+#  Last modified 2022-07-30 13:22:47.726032192
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+objs/errors.o: srcs/errors.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'errors'
+#  Last modified 2022-07-30 13:22:47.791033905
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 68):
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+# files hash-table stats:
+# Load=31/1024=3%, Rehash=0, Collisions=0/106=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 63 / storage = 590 B / avg = 9 B
+# current buf: size = 8162 B / used = 590 B / count = 63 / avg = 9 B
+
+# strcache performance: lookups = 117 / hit rate = 46%
+# hash-table stats:
+# Load=63/8192=1%, Rehash=0, Collisions=1/117=1%
+# Finished Make data base on Sat Jul 30 15:06:14 2022
+
+ 
