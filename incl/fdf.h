@@ -34,9 +34,9 @@
 
 typedef struct s_coord
 {
-	int		x;
-	int		y;
-	int		z;
+	float	x;
+	float	y;
+	float	z;
 	bool	special;
 	bool	end;
 	int		color;

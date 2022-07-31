@@ -71,7 +71,7 @@ static void init_img(t_fdf *fdf)
     if (!img)
         exit (close_fdf(fdf, MALLOC));
     fdf->img = img;
-    img->img = mlx_new_image(fdf->mlx, W_HEIGHT, W_WIDTH);
+    img->img = mlx_new_image(fdf->mlx, W_WIDTH, W_HEIGHT);
 
     img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel, &img->line_length,
 								&img->endian);

@@ -15,7 +15,7 @@ void draw_map(t_fdf *fdf)
         x = -1;
         while (++x < fdf->map_x)
         {
-            if (!fdf->map[y][x]->end)
+            if (x < fdf->map_x -1)
                 draw_line(fdf, fdf->map[y][x], fdf->map[y][x + 1]);
             if (y < fdf->map_y - 1)
                 draw_line(fdf, fdf->map[y][x], fdf->map[y + 1][x]);
@@ -63,7 +63,7 @@ static t_coord point_conversion(t_fdf *fdf, t_coord *point)
     result.special = point->special;
     image_rotation(fdf->img, &result);
     result.x += img->map_start_x + img->shift_x;
-    result.y += img->map_start_y + img->shift_y;
+    result.y += img->map_start_y;
     return (result);
 }
 /*

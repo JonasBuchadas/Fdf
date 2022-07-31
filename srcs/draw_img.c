@@ -1,11 +1,9 @@
 #include "fdf.h"
 
 void	draw_menu(t_fdf *fdf);
-void	draw_menu_background(t_image *img);
 
 void	draw_img(t_fdf *fdf)
 {
-	draw_menu_background(fdf->img);
 	draw_map(fdf);
 	draw_menu(fdf);
 }
@@ -28,7 +26,7 @@ void center_map(t_fdf *fdf)
 		fdf->img->zoom = big_x / fdf->map_x / 2;
 	if (fdf->img->zoom < 1)
 		fdf->img->zoom = 1;
-	center_x = (big_x / 2) + MENU_WIDTH;
+	center_x = (big_x / 2);
 	center_y = (big_y / 2);
 	fdf->img->map_start_x = center_x - ((fdf->map_x / 2) * fdf->img->zoom);
 	fdf->img->map_start_y = center_y - ((fdf->map_y / 2) * fdf->img->zoom);
@@ -66,37 +64,16 @@ void	draw_menu(t_fdf *fdf)
 	y = 0;
 	mlx = fdf->mlx;
 	win = fdf->win;
-	mlx_string_put(mlx, win, 50, y += 20, WHITE, "********************");
+	mlx_string_put(mlx, win, 50, y += 50, WHITE, "********************");
 	mlx_string_put(mlx, win, 50, y += 20, WHITE, "* Fil de Fer (FDF) *");
 	mlx_string_put(mlx, win, 50, y += 20, WHITE, "********************");
-	mlx_string_put(mlx, win, 15, y += 70, TEXT_COLOR, "Change Palette: C");
-	mlx_string_put(mlx, win, 15, y += 50, TEXT_COLOR, "Zoom: Scroll or +/-");
-	mlx_string_put(mlx, win, 15, y += 30, TEXT_COLOR, "Move: Arrow && Mouse");
-	mlx_string_put(mlx, win, 15, y += 30, TEXT_COLOR, "Elevation: U / D");
+	mlx_string_put(mlx, win, 15, y += 70, WHITE, "Change Palette: C");
+	mlx_string_put(mlx, win, 15, y += 50, WHITE, "Zoom: Scroll or +/-");
+	mlx_string_put(mlx, win, 15, y += 30, WHITE, "Move: Arrow && Mouse");
+	mlx_string_put(mlx, win, 15, y += 30, WHITE, "Elevation: U / D");
 	mlx_string_put(mlx, win, 15, y += 60, WHITE, "Rotate:");
-	mlx_string_put(mlx, win, 57, y += 25, TEXT_COLOR, "X-Axis - Key 4 or 6");
-	mlx_string_put(mlx, win, 57, y += 25, TEXT_COLOR, "Y-Axis - Key 2 or 8");
-	mlx_string_put(mlx, win, 57, y += 25, TEXT_COLOR, "Z-Axis - Key 1 or 9");
-	mlx_string_put(mlx, win, 15, y += 200, TEXT_COLOR, "Rotate Video: V");
-}
-
-void	draw_menu_background(t_image *img)
-{
-	size_t	offset;
-	char	*pixel;
-	size_t	x;
-	size_t	y;
-
-	y = -1;
-	ft_bzero(img->addr, W_WIDTH * W_HEIGHT * (img->bits_per_pixel / 8));
-	while (++y < W_HEIGHT)
-	{
-		x = -1;
-		while (++x < MENU_WIDTH)
-		{
-			offset = (y * img->line_length) + x * (img->bits_per_pixel / 8);
-			pixel = img->addr + offset;
-			*(unsigned int *)pixel = MENU_BACKGROUND;
-		}
-	}
+	mlx_string_put(mlx, win, 57, y += 25, WHITE, "X-Axis - Key 4 or 6");
+	mlx_string_put(mlx, win, 57, y += 25, WHITE, "Y-Axis - Key 2 or 8");
+	mlx_string_put(mlx, win, 57, y += 25, WHITE, "Z-Axis - Key 1 or 9");
+	mlx_string_put(mlx, win, 15, y += 50, WHITE, "Rotate Video: V");
 }
