@@ -1,11 +1,11 @@
 #include "fdf.h"
 
-void    del(void *str)
+void	del(void *str)
 {
-    char *line;
+	char	*line;
 
-    line = (char *)str;
-    ft_strdel(&line);
+	line = (char *)str;
+	ft_strdel(&line);
 }
 
 int	open_file(char *filename, t_fdf *fdf)
@@ -23,8 +23,11 @@ void	my_mlx_pixel_put(t_image *img, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	if (x > 0 && x < W_WIDTH && y > 0 && y < W_HEIGHT)
+	{
+		dst = img->addr + (y * img->line_length + x * (img->bpp / 8));
+		*(unsigned int *)dst = color;
+	}
 }
 
 float	float_module(float x)

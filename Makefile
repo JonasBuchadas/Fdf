@@ -21,27 +21,20 @@ endif
 
 ### SOURCE FILES ###
 SRC_NAME=	$(NAME).c
-SRC_BONUS=	$(NAME)_bonus.c
-SRC_TESTS=	test1.c
 SRCS=		utils.c \
 			hooks.c \
+			events.c \
 			errors.c \
 			read_map.c \
 			draw_img.c \
-			draw_map.c \
-			menu.c
+			draw_map.c
+
 SRCS_NAME=	$(addprefix $(SRCS_PATH), $(SRC_NAME) $(SRCS))
-SRCS_BONUS=	$(addprefix $(SRCS_PATH), $(SRC_BONUS) $(SRCS))
-SRCS_TESTS=	$(addprefix $(SRCS_PATH), $(SRC_TESTS) $(SRCS))
 
 ### OBJECT FILES ### 
 OBJ_NAME=	$(SRC_NAME:.c=.o)
-OBJ_BONUS=	$(SRC_BONUS:.c=.o)
-OBJ_TESTS=	$(SRC_TESTS:.c=.o)
 OBJS=		$(SRCS:.c=.o)
 OBJS_NAME=	$(addprefix $(OBJS_PATH), $(OBJ_NAME) $(OBJS))
-OBJS_BONUS=	$(addprefix $(OBJS_PATH), $(OBJ_BONUS) $(OBJS))
-OBJS_TESTS=	$(addprefix $(OBJS_PATH), $(OBJ_TESTS) $(OBJS))
 
 ### LIBFT ###
 LIBFTMAKE=  make bonus --silent -C $(LIBFT_PATH)
@@ -70,22 +63,12 @@ $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 ### ACTIVE RULES ###
 all: $(NAME)
 
+bonus: $(NAME)
+
 $(NAME): $(OBJS_PATH) $(OBJS_NAME)
 	@$(LIBFTMAKE)
 	@$(MLXMAKE)
 	@$(CC) $(CFLAGS) $(OBJS_NAME) $(INC) $(LIBFT) $(MLX) -o $(NAME)
-	@echo -e "$(GREEN)$(NAME) Program created$(DEFAULT)"
-
-bonus: $(OBJS_PATH) $(OBJS_BONUS)
-	@$(LIBFTMAKE)
-	@$(MLXMAKE)
-	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(INC) $(LIBFT) $(MLX) -o $(NAME)
-	@echo -e "$(GREEN)$(NAME) Program created$(DEFAULT)"
-
-test: $(OBJS_PATH) $(OBJS_TESTS)
-	@$(LIBFTMAKE)
-	@$(MLXMAKE)
-	@$(CC) $(CFLAGS) $(OBJS_TESTS) $(INC) $(LIBFT) $(MLX) -o $(NAME)
 	@echo -e "$(GREEN)$(NAME) Program created$(DEFAULT)"
 
 $(OBJS_PATH):

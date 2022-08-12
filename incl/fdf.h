@@ -28,16 +28,16 @@
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
 # define TEXT_COLOR 0xFF00FF
-# define GREEN 0x03fc35
-# define BACKGROUND 0x1A1A1D
-# define MENU_BACKGROUND 0x950740
+# define GREEN 0x03FC35
+# define MAX_COLOR 0xA61206
+# define POS_COLOR 0xE58C62
+# define NEG_COLOR 0x3256A8
 
 typedef struct s_coord
 {
 	float	x;
 	float	y;
 	float	z;
-	bool	special;
 	bool	end;
 	int		color;
 }	t_coord;
@@ -45,7 +45,7 @@ typedef struct s_coord
 typedef struct	s_image {
 	void	*img;
 	char	*addr;
-	int		bits_per_pixel;
+	int		bpp;
 	int		line_length;
 	int		endian;
 	int		max_z;
@@ -84,7 +84,7 @@ int 	open_file(char *filename, t_fdf *fdf);
 void	my_mlx_pixel_put(t_image *img, int x, int y, int color);
 int		close_window(t_fdf *fdf);
 int 	close_fdf(t_fdf *fdf, int error_code);
-int		key_pressed(int key, t_fdf *fdf);
+int		key_press(int keycode, void *param);
 void	show_menu(t_fdf *fdf);
 void    read_map(t_fdf *fdf);
 void 	draw_img(t_fdf *fdf);
@@ -94,5 +94,12 @@ float	float_module(float x);
 float	max_float(float a, float b);
 void    get_zrange(t_fdf *fdf);
 void    center_map(t_fdf *fdf);
+
+void zoom(int keycode, t_fdf *fdf);
+void move(int keycode, t_fdf *fdf);
+void change_z(int keycode, t_fdf *fdf);
+void rotate(int keycode, t_fdf *fdf);
+void change_projection(int keycode, t_fdf *fdf);
+void reset_view(t_fdf *fdf);
 
 #endif
