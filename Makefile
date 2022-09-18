@@ -14,7 +14,7 @@ INCL_PATH=	incl/
 SRCS_PATH=	srcs/
 OBJS_PATH=	objs/
 ifeq ($(OS), Linux)
-	MLX_PATH=	./mlx_linux/
+	MLX_PATH=	./minilibx-linux/
 else
 	MLX_PATH=	./minilibx_macos/
 endif
@@ -31,7 +31,7 @@ SRCS=		utils.c \
 
 SRCS_NAME=	$(addprefix $(SRCS_PATH), $(SRC_NAME) $(SRCS))
 
-### OBJECT FILES ### 
+### OBJECT FILES ###
 OBJ_NAME=	$(SRC_NAME:.c=.o)
 OBJS=		$(SRCS:.c=.o)
 OBJS_NAME=	$(addprefix $(OBJS_PATH), $(OBJ_NAME) $(OBJS))
@@ -69,21 +69,21 @@ $(NAME): $(OBJS_PATH) $(OBJS_NAME)
 	@$(LIBFTMAKE)
 	@$(MLXMAKE)
 	@$(CC) $(CFLAGS) $(OBJS_NAME) $(INC) $(LIBFT) $(MLX) -o $(NAME)
-	@echo -e "$(GREEN)$(NAME) Program created$(DEFAULT)"
+	@echo "$(GREEN)$(NAME) Program created$(DEFAULT)"
 
 $(OBJS_PATH):
 	@mkdir -p $@
-	
+
 clean:
 	@make $@ --silent -C $(LIBFT_PATH)
 	@rm -rf $(OBJS_PATH)
-	@echo -e "$(RED)Object files removed$(DEFAULT)"
+	@echo "$(RED)Object files removed$(DEFAULT)"
 
 fclean: clean
 	@make $@ --silent -C $(LIBFT_PATH)
-	@echo -e "$(RED)Libft removed$(DEFAULT)"
+	@echo "$(RED)Libft removed$(DEFAULT)"
 	@rm -f $(NAME)
-	@echo -e "$(RED)$(NAME) Program removed$(DEFAULT)"
+	@echo "$(RED)$(NAME) Program removed$(DEFAULT)"
 
 re: fclean all
 

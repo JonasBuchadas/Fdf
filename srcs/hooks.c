@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hooks.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jocaetan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/18 13:18:15 by jocaetan          #+#    #+#             */
+/*   Updated: 2022/09/18 13:18:17 by jocaetan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 int	close_window(t_fdf *fdf)
@@ -25,8 +37,6 @@ int	key_press(int keycode, void *param)
 		change_projection(keycode, fdf);
 	else if (keycode == R_KEY)
 		reset_view(fdf);
-	else
-		ft_putnbr_fd(keycode, 1);
 	return (0);
 }
 

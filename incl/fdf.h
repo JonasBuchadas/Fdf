@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jocaetan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/18 13:17:59 by jocaetan          #+#    #+#             */
+/*   Updated: 2022/09/18 13:18:02 by jocaetan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FDF_H
 # define FDF_H
 
@@ -42,7 +54,7 @@ typedef struct s_coord
 	int		color;
 }	t_coord;
 
-typedef struct	s_image {
+typedef struct s_image {
 	void	*img;
 	char	*addr;
 	int		bpp;
@@ -69,37 +81,37 @@ typedef struct s_mouse
 	double	deg_value;
 }	t_mouse;
 
-typedef struct	s_fdf {
-    void	*mlx;
-    void	*win;
-    int     fd;
+typedef struct s_fdf {
+	void	*mlx;
+	void	*win;
+	int		fd;
 	int		map_x;
 	int		map_y;
-    char    *filename;
+	char	*filename;
 	t_coord	***map;
 	t_image	*img;
 }				t_fdf;
 
-int 	open_file(char *filename, t_fdf *fdf);
+int		open_file(char *filename, t_fdf *fdf);
 void	my_mlx_pixel_put(t_image *img, int x, int y, int color);
 int		close_window(t_fdf *fdf);
-int 	close_fdf(t_fdf *fdf, int error_code);
+int		close_fdf(t_fdf *fdf, int error_code);
 int		key_press(int keycode, void *param);
 void	show_menu(t_fdf *fdf);
-void    read_map(t_fdf *fdf);
-void 	draw_img(t_fdf *fdf);
-void 	draw_map(t_fdf *fdf);
-void    del(void *str);
+void	read_map(t_fdf *fdf);
+void	draw_img(t_fdf *fdf);
+void	draw_map(t_fdf *fdf);
+void	del(void *str);
 float	float_module(float x);
 float	max_float(float a, float b);
-void    get_zrange(t_fdf *fdf);
-void    center_map(t_fdf *fdf);
+void	get_zrange(t_fdf *fdf);
+void	center_map(t_fdf *fdf);
 
-void zoom(int keycode, t_fdf *fdf);
-void move(int keycode, t_fdf *fdf);
-void change_z(int keycode, t_fdf *fdf);
-void rotate(int keycode, t_fdf *fdf);
-void change_projection(int keycode, t_fdf *fdf);
-void reset_view(t_fdf *fdf);
+void	zoom(int keycode, t_fdf *fdf);
+void	move(int keycode, t_fdf *fdf);
+void	change_z(int keycode, t_fdf *fdf);
+void	rotate(int keycode, t_fdf *fdf);
+void	change_projection(int keycode, t_fdf *fdf);
+void	reset_view(t_fdf *fdf);
 
 #endif
