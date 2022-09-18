@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocaetan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 13:19:12 by jocaetan          #+#    #+#             */
-/*   Updated: 2022/09/18 13:19:13 by jocaetan         ###   ########.fr       */
+/*   Created: 2022/09/18 14:47:44 by jocaetan          #+#    #+#             */
+/*   Updated: 2022/09/18 16:05:36 by jocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	init_fdf(t_fdf *fdf, char *filename);
 static void	init_map(t_fdf *fdf, char *filename);
+static void	count_lines(t_fdf *fdf);
 static void	init_img(t_fdf *fdf);
-static void	loop_fdf(t_fdf *fdf);
 
 int	main(int argc, char **argv)
 {
@@ -46,15 +46,28 @@ static void	init_fdf(t_fdf *fdf, char *filename)
 		exit (close_fdf(fdf, FD));
 	fdf->filename = filename;
 	fdf->win = mlx_new_window(fdf->mlx, W_WIDTH, W_HEIGHT, filename);
+	fdf->map_x = 0;
+	fdf->map_y = 0;
 }
 
 static void	init_map(t_fdf *fdf, char *filename)
 {
+	count_lines(fdf);
+	fdf->fd = open(filename, O_RDONLY);
+	if (fdf->fd < 0)
+		exit (close_fdf(fdf, FD));
+	fdf->map = (t_coord ***)ft_calloc(fdf->map_y, sizeof(t_coord **));
+	if (!fdf->map)
+		exit(close_fdf(fdf, MALLOC));
+	if (fdf->map_y == 0 || fdf->map_x == 0)
+		exit(close_fdf(fdf, MAP));
+}
+
+static void	count_lines(t_fdf *fdf)
+{
 	char	*line;
 	char	**points;
 
-	fdf->map_x = 0;
-	fdf->map_y = 0;
 	while (1)
 	{
 		line = get_next_line(fdf->fd);
@@ -63,18 +76,16 @@ static void	init_map(t_fdf *fdf, char *filename)
 		points = ft_split(line, ' ');
 		if (fdf->map_x == 0)
 			fdf->map_x = ft_strarray_size(points);
+		else if (fdf->map_x != ft_strarray_size(points))
+		{
+			ft_strdel(&line);
+			ft_strarray_clear(&points);
+			exit(close_fdf(fdf, MAP));
+		}
 		fdf->map_y++;
 		ft_strdel(&line);
 		ft_strarray_clear(&points);
 	}
-	fdf->fd = open(filename, O_RDONLY);
-	if (fdf->fd < 0)
-		exit (close_fdf(fdf, FD));
-	fdf->map = (t_coord ***)ft_calloc(fdf->map_y, sizeof(t_coord **));
-	if (!fdf->map)
-		exit(close_fdf(fdf, MALLOC));
-	if (fdf->map_y == 0)
-		exit(close_fdf(fdf, MAP));
 }
 
 static void	init_img(t_fdf *fdf)
@@ -98,14 +109,4 @@ static void	init_img(t_fdf *fdf)
 	img->z_zoom = 1;
 	img->shift_x = W_WIDTH / 3;
 	img->shift_y = W_HEIGHT / 10;
-}
-
-static void	loop_fdf(t_fdf *fdf)
-{
-	while (1)
-	{
-		mlx_key_hook(fdf->win, key_press, fdf);
-		mlx_hook(fdf->win, 17, 0, close_window, fdf);
-		mlx_loop(fdf->mlx);
-	}
 }

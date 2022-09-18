@@ -6,7 +6,7 @@
 /*   By: jocaetan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 13:18:50 by jocaetan          #+#    #+#             */
-/*   Updated: 2022/09/18 13:18:56 by jocaetan         ###   ########.fr       */
+/*   Updated: 2022/09/18 16:08:23 by jocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	draw_menu(t_fdf *fdf)
 	mlx_string_put(mlx, win, 50, y += 20, WHITE, "* Fil de Fer (FDF) *");
 	mlx_string_put(mlx, win, 50, y += 20, WHITE, "********************");
 	mlx_string_put(mlx, win, 50, y += 50, WHITE, "Zoom In: +");
-	mlx_string_put(mlx, win, 50, y += 50, WHITE, "Zoom Out: -");
+	mlx_string_put(mlx, win, 50, y += 30, WHITE, "Zoom Out: -");
 	mlx_string_put(mlx, win, 50, y += 30, WHITE, "Move: Arrow Keys");
 	mlx_string_put(mlx, win, 50, y += 30, WHITE, "Elevation: W / S");
 	mlx_string_put(mlx, win, 50, y += 60, WHITE, "Rotate Up: A");

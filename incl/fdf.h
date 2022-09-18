@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocaetan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 13:17:59 by jocaetan          #+#    #+#             */
-/*   Updated: 2022/09/18 13:18:02 by jocaetan         ###   ########.fr       */
+/*   Created: 2022/09/18 15:05:36 by jocaetan          #+#    #+#             */
+/*   Updated: 2022/09/18 16:24:17 by jocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@
 // COLORS
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
-# define TEXT_COLOR 0xFF00FF
-# define GREEN 0x03FC35
 # define MAX_COLOR 0xA61206
 # define POS_COLOR 0xE58C62
 # define NEG_COLOR 0x3256A8
@@ -73,14 +71,6 @@ typedef struct s_image {
 	double	angle;
 }				t_image;
 
-typedef struct s_mouse
-{
-	int		previous_x;
-	int		previous_y;
-	bool	b_pressed;
-	double	deg_value;
-}	t_mouse;
-
 typedef struct s_fdf {
 	void	*mlx;
 	void	*win;
@@ -106,7 +96,7 @@ float	float_module(float x);
 float	max_float(float a, float b);
 void	get_zrange(t_fdf *fdf);
 void	center_map(t_fdf *fdf);
-
+void	loop_fdf(t_fdf *fdf);
 void	zoom(int keycode, t_fdf *fdf);
 void	move(int keycode, t_fdf *fdf);
 void	change_z(int keycode, t_fdf *fdf);

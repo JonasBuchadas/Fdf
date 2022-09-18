@@ -6,11 +6,21 @@
 /*   By: jocaetan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 13:18:15 by jocaetan          #+#    #+#             */
-/*   Updated: 2022/09/18 13:18:17 by jocaetan         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:04:11 by jocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	loop_fdf(t_fdf *fdf)
+{
+	while (1)
+	{
+		mlx_key_hook(fdf->win, key_press, fdf);
+		mlx_hook(fdf->win, 17, 0, close_window, fdf);
+		mlx_loop(fdf->mlx);
+	}
+}
 
 int	close_window(t_fdf *fdf)
 {

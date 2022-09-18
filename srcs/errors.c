@@ -6,7 +6,7 @@
 /*   By: jocaetan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 13:19:02 by jocaetan          #+#    #+#             */
-/*   Updated: 2022/09/18 14:11:26 by jocaetan         ###   ########.fr       */
+/*   Updated: 2022/09/18 14:27:08 by jocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	clear_fdf(t_fdf *fdf)
 {
 	if (fdf)
 	{
-	//	if (fdf->img)
+		if (fdf->img)
 		{
 			mlx_destroy_image(fdf->mlx, fdf->img->img);
 			free(fdf->img);
@@ -43,7 +43,10 @@ static void	clear_fdf(t_fdf *fdf)
 		if (fdf->win)
 			mlx_destroy_window(fdf->mlx, fdf->win);
 		if (fdf->mlx)
+		{
+			mlx_destroy_display(fdf->mlx);
 			free(fdf->mlx);
+		}
 		if (fdf->map)
 			clear_map(fdf);
 		if (fdf)
@@ -61,10 +64,8 @@ static void	clear_map(t_fdf *fdf)
 	{
 		x = -1;
 		while (++x < fdf->map_x)
-			free(fdf->map[y][x]);
-		//	ft_memdel((void **)&fdf->map[y][x]);
-		free(fdf->map[y]);
-		//ft_memdel((void **)&fdf->map[y]);
+			ft_memdel((void **)&fdf->map[y][x]);
+		ft_memdel((void **)&fdf->map[y]);
 	}
 	free(fdf->map);
 }
